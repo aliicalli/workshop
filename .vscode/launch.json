@@ -2,13 +2,6 @@
   "configurations": [
     {
       "type": "java",
-      "name": "ProductServiceApplication",
-      "request": "launch",
-      "mainClass": "comalicalli.productservice.ProductServiceApplication",
-      "projectName": ""
-    },
-    {
-      "type": "java",
       "name": "Spring Boot-ProductServiceApplication<product-service>",
       "request": "launch",
       "cwd": "${workspaceFolder}",
@@ -25,7 +18,8 @@
       "mainClass": "com.alicalli.orderservice.OrderServiceApplication",
       "projectName": "order-service",
       "args": "",
-      "envFile": "${workspaceFolder}/.env"
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52538 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=order-service"
     },
     {
       "type": "java",
@@ -35,7 +29,29 @@
       "mainClass": "com.alicalli.inventoryservice.InventoryServiceApplication",
       "projectName": "inventory-service",
       "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52564 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=inventory-service"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-DiscoveryService<discovery-server>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.alicalli.discoveryserver.DiscoveryServerApplication",
+      "projectName": "discovery-server",
+      "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "InventoryServiceApplication<inventory-service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.alicalli.inventoryservice.InventoryServiceApplication",
+      "projectName": "inventory-service",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.-Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=inventory-service"
     }
   ]
 }

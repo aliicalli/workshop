@@ -1,13 +1,9 @@
 package com.alicalli.inventoryservice.repository;
 
-import java.util.Optional;
-
+import com.alicalli.inventoryservice.model.Inventory;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.alicalli.inventoryservice.model.Inventory;
-
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
-
-  Optional<Inventory>findBySkuCode(String skuCode);
-
+  List<Inventory> findBySkuCodeIn(List<String> skuCode);
 }
